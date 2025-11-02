@@ -1,0 +1,199 @@
+/* === Global Styles === */
+* {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background: linear-gradient(to bottom, #94D1BE, #9DB5B2, #DAF0EE);
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  color: #2f2f2f;
+}
+
+/* === Header === */
+header {
+  text-align: center;
+  font-size: 35px;
+  padding-top: 40px;
+  font-weight: 100;
+  color: #3b3b3b;
+  letter-spacing: 2px;
+  animation: fadeIn 1s ease-in-out;
+  position: relative;
+}
+
+h1 {
+  letter-spacing: 10px;
+  margin-bottom: 10px;
+  position: relative;
+  display: inline-block;
+}
+
+/* Animated underline under header */
+h1::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%) scaleX(0);
+  width: 60%;
+  height: 2px;
+  background-color: rgba(255, 255, 255, 0.8);
+  transition: transform 0.6s ease;
+}
+
+header:hover h1::after {
+  transform: translateX(-50%) scaleX(1);
+}
+
+/* === Navbar Section === */
+.navbar {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 40px 20px;
+}
+
+/* Navbar Buttons */
+.navbar button {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.3s ease;
+  padding: 12px 24px;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(6px);
+  color: #2f2f2f;
+  border: 1.5px solid rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  cursor: pointer;
+  animation: slideUp 0.8s ease-out forwards;
+  min-width: 120px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* === Button Hover Glow - Uniform Across All Pages === */
+.navbar button:hover {
+  background: rgba(255, 255, 255, 0.85);   /* bright frosted glass */
+  transform: translateY(-3px) scale(1.05);  /* subtle lift + scale */
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.6); /* soft white glow */
+}
+
+/* Staggered Animation Delays */
+.navbar button:nth-child(1) { animation-delay: 0.2s; }
+.navbar button:nth-child(2) { animation-delay: 0.4s; }
+.navbar button:nth-child(3) { animation-delay: 0.6s; }
+.navbar button:nth-child(4) { animation-delay: 0.8s; }
+
+/* === Education Section === */
+.education-section {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px 30px;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(6px);
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  animation: fadeInUp 1s ease-in-out;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.education-section:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.4);
+}
+
+.education-item h2 {
+  font-size: 26px;
+  color: #2c3e50;
+  margin-bottom: 8px;
+}
+
+.education-item h3 {
+  font-size: 20px;
+  font-weight: normal;
+  color: #4f4f4f;
+  margin-bottom: 5px;
+}
+
+.education-item p {
+  font-size: 16px;
+  color: #555;
+}
+
+.education-item ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.education-item li {
+  margin-bottom: 5px;
+}
+
+/* === Animations === */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  0% { opacity: 0; transform: translateY(40px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* === Responsive Design === */
+@media (max-width: 800px) {
+  header h1 {
+    font-size: 26px;
+    letter-spacing: 5px;
+  }
+
+  .education-section {
+    margin: 20px;
+    padding: 15px;
+  }
+
+  .education-item h2 {
+    font-size: 22px;
+  }
+
+  .education-item h3 {
+    font-size: 18px;
+  }
+
+  .education-item p {
+    font-size: 15px;
+  }
+
+  .navbar {
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    align-items: center;
+  }
+
+  .navbar button {
+    width: 90%;
+    max-width: 350px;
+    text-align: center;
+  }
+}

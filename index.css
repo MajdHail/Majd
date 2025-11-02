@@ -2,14 +2,14 @@
 * {
   font-family: Georgia, 'Times New Roman', Times, serif;
   box-sizing: border-box;
-  scroll-behavior: smooth; /* smooth scrolling for links */
+  scroll-behavior: smooth;
 }
 
 body {
-  min-height: 100vh; /* ensures full height */
+  min-height: 100vh;
   margin: 0;
   background: linear-gradient(to bottom, #94D1BE, #9DB5B2, #DAF0EE);
-  background-attachment: fixed; /* keeps gradient steady */
+  background-attachment: fixed;
   display: flex;
   flex-direction: column;
   color: #2f2f2f;
@@ -23,7 +23,7 @@ header {
   font-weight: 100;
   color: #3b3b3b;
   letter-spacing: 2px;
-  animation: fadeIn 1s ease-in-out; /* subtle fade effect */
+  animation: fadeIn 1s ease-in-out;
 }
 
 h1 {
@@ -39,7 +39,7 @@ h1 {
   align-items: center;
   gap: 20px;
   flex-wrap: wrap;
-  padding: 40px 20px; /* adds breathing room */
+  padding: 40px 20px;
 }
 
 /* Buttons */
@@ -49,9 +49,12 @@ button {
   transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
   padding: 12px 24px;
   font-size: 1rem;
-  background-color: #e3e3c7;
-  color: black;
-  border: 2px solid black;
+
+  /* 💎 Match the translucent section color */
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(6px); /* adds a frosted glass effect */
+  color: #2f2f2f;
+  border: 1.5px solid rgba(0, 0, 0, 0.2);
   border-radius: 8px;
   cursor: pointer;
   animation: slideUp 0.8s ease-out forwards;
@@ -82,12 +85,13 @@ button {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Hover effects */
-button:hover {
-  background-color: #c7936b;
-  transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+/* === Button Hover Glow - Uniform Across All Pages === */
+.navbar button:hover {
+  background: rgba(255, 255, 255, 0.85);   /* bright frosted glass */
+  transform: translateY(-3px) scale(1.05);  /* subtle lift + scale */
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.6); /* soft white glow */
 }
+
 
 /* === Mobile Adjustments === */
 @media (max-width: 700px) {

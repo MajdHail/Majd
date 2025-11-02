@@ -23,7 +23,7 @@ header {
   font-weight: 100;
   color: #3b3b3b;
   letter-spacing: 2px;
-  animation: fadeIn 1s ease-in-out;
+  animation: fadeIn 1.5s ease forwards; /* slower fade */
 }
 
 h1 {
@@ -42,30 +42,31 @@ h1 {
   padding: 40px 20px;
 }
 
-/* Navbar Buttons ONLY */
+/* Navbar Buttons */
 .navbar button {
   opacity: 0;
   transform: translateY(40px);
   transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
   padding: 12px 24px;
   font-size: 1rem;
-  background-color: #e3e3c7;
-  color: black;
-  border: 2px solid black;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(6px);
+  color: #2f2f2f;
+  border: 1.5px solid rgba(0, 0, 0, 0.2);
   border-radius: 8px;
   cursor: pointer;
-  animation: slideUp 0.8s ease-out forwards;
+  animation: slideUp 1.5s ease-out forwards; /* slower */
   min-width: 120px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Animation delays */
+/* Animation delays for buttons */
 .navbar button:nth-child(1) { animation-delay: 0.2s; }
 .navbar button:nth-child(2) { animation-delay: 0.4s; }
 .navbar button:nth-child(3) { animation-delay: 0.6s; }
 .navbar button:nth-child(4) { animation-delay: 0.8s; }
 
-/* Animations */
+/* === Animations === */
 @keyframes slideUp {
   0% { opacity: 0; transform: translateY(40px); }
   100% { opacity: 1; transform: translateY(0); }
@@ -76,11 +77,16 @@ h1 {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Hover Effects */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* === Button Hover Glow - Uniform Across All Pages === */
 .navbar button:hover {
-  background-color: #c7936b;
+  background: rgba(255, 255, 255, 0.85);
   transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.6);
 }
 
 /* === About Section === */
@@ -91,6 +97,10 @@ h1 {
   max-width: 900px;
   margin: 40px auto;
   padding: 0 20px;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1.5s ease forwards; /* slower */
+  animation-delay: 0s; /* starts immediately with header */
 }
 
 .profile-pic {
@@ -98,6 +108,10 @@ h1 {
   border-radius: 12px;
   object-fit: cover;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1.5s ease forwards; /* slower */
+  animation-delay: 0s;
 }
 
 .about-text p {
@@ -106,6 +120,10 @@ h1 {
   margin-right: 30px;
   text-align: justify;
   color: #2f2f2f;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1.5s ease forwards; /* slower */
+  animation-delay: 0s;
 }
 
 /* === Mobile Adjustments === */
