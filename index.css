@@ -88,6 +88,7 @@ button {
 .navbar button:nth-child(2) { animation-delay: 0.4s; }
 .navbar button:nth-child(3) { animation-delay: 0.6s; }
 .navbar button:nth-child(4) { animation-delay: 0.8s; }
+.navbar button:nth-child(5) { animation-delay: 1s; }
 
 /* Animations */
 @keyframes slideUp {
@@ -108,7 +109,15 @@ button {
 }
 
 /* === Mobile Adjustments === */
-@media (max-width: 700px) {
+@media (max-width: 800px) {
+  header h1 {
+    font-size: 26px;
+    letter-spacing: 5px;
+  }
+  header p {
+    font-size: 20px;
+    margin: 10px 20px;
+  }
   .navbar {
     flex-direction: column;
     gap: 15px;

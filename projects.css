@@ -51,6 +51,65 @@ header:hover h1::after {
   transform: translateX(-50%) scaleX(1);
 }
 
+/* === Project Section === */
+.project-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 25px 30px;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(6px);
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  animation: fadeInUp 1s ease-in-out;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  gap: 20px;
+}
+
+.project-item:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.4);
+}
+
+.project-item .text {
+  flex: 1;
+}
+
+.project-item h2 {
+  font-size: 26px;
+  color: #2c3e50;
+  margin-bottom: 8px;
+}
+
+.project-item p {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* === Alternating Layouts === */
+.project-item img {
+  max-width: 45%;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+/* Even projects (2nd, 4th, etc.) will flip layout */
+.project-item:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+/* Add spacing so text doesn’t touch image */
+.project-item:nth-child(odd) img {
+  margin-left: 20px;
+}
+
+.project-item:nth-child(even) img {
+  margin-right: 20px;
+}
+
 /* === Navbar Section === */
 .navbar {
   flex: 1;
@@ -62,7 +121,6 @@ header:hover h1::after {
   padding: 40px 20px;
 }
 
-/* Navbar Buttons */
 .navbar button {
   opacity: 0;
   transform: translateY(40px);
@@ -80,11 +138,11 @@ header:hover h1::after {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* === Button Hover Glow - Uniform Across All Pages === */
+/* Button Hover Effect */
 .navbar button:hover {
-  background: rgba(255, 255, 255, 0.85);   /* bright frosted glass */
-  transform: translateY(-3px) scale(1.05);  /* subtle lift + scale */
-  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.6); /* soft white glow */
+  background: rgba(255, 255, 255, 0.85);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.6);
 }
 
 /* Staggered Animation Delays */
@@ -94,51 +152,6 @@ header:hover h1::after {
 .navbar button:nth-child(4) { animation-delay: 0.8s; }
 .navbar button:nth-child(5) { animation-delay: 1s; }
 
-/* === Education Section === */
-.education-item {
-  max-width: 800px;
-  margin: 40px auto;
-  padding: 20px 30px;
-  background: rgba(255, 255, 255, 0.6);
-  backdrop-filter: blur(6px);
-  border-radius: 15px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  animation: fadeInUp 1s ease-in-out;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.education-item:hover {
-  transform: scale(1.02);
-  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.4);
-}
-
-.education-item h2 {
-  font-size: 26px;
-  color: #2c3e50;
-  margin-bottom: 8px;
-}
-
-.education-item h3 {
-  font-size: 20px;
-  font-weight: normal;
-  color: #4f4f4f;
-  margin-bottom: 5px;
-}
-
-.education-item p {
-  font-size: 16px;
-  color: #555;
-}
-
-.education-item ul {
-  list-style-type: disc;
-  padding-left: 20px;
-}
-
-.education-item li {
-  margin-bottom: 5px;
-}
-
 /* === Animations === */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(-10px); }
@@ -146,14 +159,8 @@ header:hover h1::after {
 }
 
 @keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes slideUp {
@@ -168,20 +175,23 @@ header:hover h1::after {
     letter-spacing: 5px;
   }
 
-  .education-item {
+  .project-item {
+    flex-direction: column !important;
+    text-align: center;
     margin: 20px;
     padding: 15px;
   }
 
-  .education-item h2 {
+  .project-item img {
+    max-width: 60%;
+    margin: 15px 0 0 0 !important;
+  }
+
+  .project-item h2 {
     font-size: 22px;
   }
 
-  .education-item h3 {
-    font-size: 18px;
-  }
-
-  .education-item p {
+  .project-item p {
     font-size: 15px;
   }
 
@@ -189,12 +199,10 @@ header:hover h1::after {
     flex-direction: column;
     gap: 15px;
     padding: 20px;
-    align-items: center;
   }
 
   .navbar button {
     width: 90%;
     max-width: 350px;
-    text-align: center;
   }
 }
