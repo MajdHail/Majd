@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Work experience of Majd Yasin.">
+    <meta name="author" content="Majd Yasin">
+    <link href="experience.css" rel="stylesheet">
+    <title>Majd Yasin - Experience</title>
+</head>
+<body>
+  <main class="card" role="main" aria-live="polite">
+    <div id="stage">
+      <div class="loading" aria-hidden="false">
+        <span>Loading</span>
+        <span class="dots" aria-hidden="true">
+          <span class="dot a"></span>
+          <span class="dot b"></span>
+          <span class="dot c"></span>
+          <span class="dot d"></span>
+        </span>
+      </div>
+
+<div id="finalMessage" class="message" aria-hidden="true">
+  <strong>Oops &mdash; no experience here... yet!</strong>
+  <p>
+    I don't have any formal work experience right now. <br>
+    Help me fix that? <a class="cta" href="contact.html">Contact me</a>
+  </p>
+  <div class="tiny">
+    Silly message powered by optimism and a strong desire to learn.
+  </div>
+  <button class="home-btn" onclick="window.location.href='index.html'">Back to Home</button>
+</div>
+
+  </main>
+
+  <script>
+    // show final message after 2 seconds (2000ms)
+    (function () {
+      const LOAD_MS = 2000;
+      const loadingEl = document.querySelector('.loading');
+      const finalEl = document.getElementById('finalMessage');
+
+      // ensure screenreader sees "loading..." first, then the final message
+      setTimeout(() => {
+        // hide loading visually but keep it accessible momentarily
+        loadingEl.setAttribute('aria-hidden', 'true');
+        loadingEl.style.display = 'none';
+
+        // reveal final message
+        finalEl.setAttribute('aria-hidden', 'false');
+        finalEl.classList.add('show');
+
+      }, LOAD_MS);
+    })();
+  </script>
+</body>
+</html>
