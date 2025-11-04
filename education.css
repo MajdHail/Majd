@@ -1,4 +1,3 @@
-/* === Global Styles === */
 * {
   font-family: Georgia, 'Times New Roman', Times, serif;
   box-sizing: border-box;
@@ -15,7 +14,6 @@ body {
   color: #2f2f2f;
 }
 
-/* === Header === */
 header {
   text-align: center;
   font-size: 35px;
@@ -34,7 +32,6 @@ h1 {
   display: inline-block;
 }
 
-/* Animated underline under header */
 h1::after {
   content: "";
   position: absolute;
@@ -51,7 +48,6 @@ header:hover h1::after {
   transform: translateX(-50%) scaleX(1);
 }
 
-/* === Navbar Section === */
 .navbar {
   flex: 1;
   display: flex;
@@ -62,7 +58,6 @@ header:hover h1::after {
   padding: 40px 20px;
 }
 
-/* Navbar Buttons */
 .navbar button {
   opacity: 0;
   transform: translateY(40px);
@@ -80,21 +75,18 @@ header:hover h1::after {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* === Button Hover Glow - Uniform Across All Pages === */
 .navbar button:hover {
   background: rgba(255, 255, 255, 0.85);   /* bright frosted glass */
   transform: translateY(-3px) scale(1.05);  /* subtle lift + scale */
   box-shadow: 0 6px 20px rgba(255, 255, 255, 0.6); /* soft white glow */
 }
 
-/* Staggered Animation Delays */
 .navbar button:nth-child(1) { animation-delay: 0.2s; }
 .navbar button:nth-child(2) { animation-delay: 0.4s; }
 .navbar button:nth-child(3) { animation-delay: 0.6s; }
 .navbar button:nth-child(4) { animation-delay: 0.8s; }
 .navbar button:nth-child(5) { animation-delay: 1s; }
 
-/* === Education Section === */
 .education-item {
   max-width: 800px;
   margin: 40px auto;
@@ -139,7 +131,6 @@ header:hover h1::after {
   margin-bottom: 5px;
 }
 
-/* === Animations === */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(-10px); }
   to { opacity: 1; transform: translateY(0); }
@@ -161,7 +152,6 @@ header:hover h1::after {
   100% { opacity: 1; transform: translateY(0); }
 }
 
-/* === Responsive Design === */
 @media (max-width: 800px) {
   header h1 {
     font-size: 26px;

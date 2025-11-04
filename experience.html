@@ -36,19 +36,15 @@
   </main>
 
   <script>
-    // show final message after 2 seconds (2000ms)
     (function () {
       const LOAD_MS = 2000;
       const loadingEl = document.querySelector('.loading');
       const finalEl = document.getElementById('finalMessage');
 
-      // ensure screenreader sees "loading..." first, then the final message
       setTimeout(() => {
-        // hide loading visually but keep it accessible momentarily
         loadingEl.setAttribute('aria-hidden', 'true');
         loadingEl.style.display = 'none';
 
-        // reveal final message
         finalEl.setAttribute('aria-hidden', 'false');
         finalEl.classList.add('show');
 
