@@ -50,6 +50,7 @@ header:hover h1::after {
 }
 
 .contact-card {
+  display: block;
   max-width: 600px;
   width: 100%;
   margin: 60px auto 40px;
@@ -182,8 +183,17 @@ button[type="submit"]:hover {
   }
 
   .contact-card {
-    margin: 20px;
+    margin: 20px auto;
     padding: 20px 15px;
+    width: 90%;
+  }
+
+  .contact-card h1 {
+    font-size: 22px;
+  }
+
+  .contact-info {
+    font-size: 14px;
   }
 
   input, textarea {
