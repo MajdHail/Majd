@@ -120,7 +120,6 @@
         transform: translateY(-5px);
       }
 
-      /* Hidden JJK Characters */
       .hidden-character {
         position: fixed;
         width: 80px;
@@ -269,7 +268,6 @@
         height: 150%;
       }
 
-      /* Sukuna Slash Effect */
       .experience-panel {
         position: relative;
         background: var(--surface);
@@ -456,17 +454,15 @@
     </nav>
 
     <div id="home" class="page active">
-      <!-- Gojo Character -->
       <div class="hidden-character top-left" style="animation-delay: 0.5s">
         <div class="character-reveal">
-          <img src="./Assets/gojo.png" alt="Gojo" class="character-img" />
+          <img src="./gojo.png" alt="Gojo" class="character-img" />
           <span class="character-name">Gojo</span>
         </div>
       </div>
-      <!-- Sukuna Character -->
       <div class="hidden-character top-right" style="animation-delay: 1s">
         <div class="character-reveal">
-          <img src="./Assets/sukuna.png" alt="Sukuna" class="character-img" />
+          <img src="./sukuna.png" alt="Sukuna" class="character-img" />
           <span class="character-name">Sukuna</span>
         </div>
       </div>
@@ -505,17 +501,15 @@
     </div>
 
     <div id="about" class="page">
-      <!-- Megumi Character -->
       <div class="hidden-character bottom-left" style="animation-delay: 0.5s">
         <div class="character-reveal">
-          <img src="./Assets/megumi.png" alt="Megumi" class="character-img" />
+          <img src="./megumi.png" alt="Megumi" class="character-img" />
           <span class="character-name">Megumi</span>
         </div>
       </div>
-      <!-- Nobara Character -->
       <div class="hidden-character top-right" style="animation-delay: 1.2s">
         <div class="character-reveal">
-          <img src="./Assets/nobara.png" alt="Nobara" class="character-img" />
+          <img src="./nobara.png" alt="Nobara" class="character-img" />
           <span class="character-name">Nobara</span>
         </div>
       </div>
@@ -583,17 +577,15 @@
     </div>
 
     <div id="history" class="page">
-      <!-- Yuji Character -->
       <div class="hidden-character top-left" style="animation-delay: 0.3s">
         <div class="character-reveal">
-          <img src="./Assets/yuji.png" alt="Yuji" class="character-img" />
+          <img src="./yuji.png" alt="Yuji" class="character-img" />
           <span class="character-name">Yuji</span>
         </div>
       </div>
-      <!-- Hakari Character -->
       <div class="hidden-character bottom-right" style="animation-delay: 0.8s">
         <div class="character-reveal">
-          <img src="./Assets/hakari.png" alt="Hakari" class="character-img" />
+          <img src="./hakari.png" alt="Hakari" class="character-img" />
           <span class="character-name">Hakari</span>
         </div>
       </div>
@@ -935,28 +927,23 @@
       let slashTriggered = false;
 
       function showPage(pageName) {
-        // Hide all pages and characters
         document.querySelectorAll(".page").forEach((page) => {
           page.classList.remove("active");
         });
 
-        // Show selected page
         document.getElementById(pageName).classList.add("active");
 
-        // Update nav buttons
         document.querySelectorAll("nav button").forEach((btn) => {
           btn.classList.remove("active");
         });
         document.getElementById("nav-" + pageName).classList.add("active");
 
-        // Trigger slash animation when visiting history page
         if (pageName === "history" && !slashTriggered) {
           setTimeout(() => {
             triggerSlashAnimation();
           }, 500);
         }
 
-        // Setup character discovery for current page
         setTimeout(() => {
           const currentPage = document.getElementById(pageName);
           currentPage.querySelectorAll(".hidden-character").forEach((char) => {
@@ -986,7 +973,6 @@
         }, 500);
       }
 
-      // Setup character discovery on page load
       document.addEventListener("DOMContentLoaded", function () {
         document.querySelectorAll(".hidden-character").forEach((char) => {
           const reveal = char.querySelector(".character-reveal");
@@ -996,7 +982,6 @@
         });
       });
 
-      // Contact form
       document
         .getElementById("contactForm")
         .addEventListener("submit", async function (e) {
