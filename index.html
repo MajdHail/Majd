@@ -734,7 +734,7 @@
         <div class="special-grade-message" id="special-message">
           <h3>No job experience yet,</h3>
           <p style="color: var(--accent); font-weight: 700; font-size: 1.3rem">
-            but I am special grade!
+            but I am special grade! ⚡
           </p>
         </div>
       </div>
@@ -759,7 +759,7 @@
 
       <div
         class="project-card"
-        onclick="window.open('https://github.com/MajdHail/Majd', '_blank')"
+        onclick="window.open('https://github.com/MajdHail/portfolio', '_blank')"
       >
         <h3 style="color: var(--primary)">Portfolio Website ↗</h3>
         <p>
@@ -851,7 +851,7 @@
 
         <div style="margin: 1rem 0">
           <a
-            href="mailto:majd.nouryasin@gmail.com"
+            href="/cdn-cgi/l/email-protection#e28f838886cc8c8d97909b83918b8ca2858f838b8ecc818d8f"
             style="
               color: var(--text);
               text-decoration: none;
@@ -866,7 +866,12 @@
             onmouseover="this.style.borderColor = 'var(--primary)'"
             onmouseout="this.style.borderColor = 'var(--border)'"
           >
-            📧 majd.nouryasin@gmail.com
+            📧
+            <span
+              class="__cf_email__"
+              data-cfemail="b9d4d8d3dd97d7d6cccbc0d8cad0d7f9ded4d8d0d597dad6d4"
+              >[email&#160;protected]</span
+            >
           </a>
           <a
             href="https://github.com/MajdHail"
@@ -1033,6 +1038,10 @@
       </p>
     </footer>
 
+    <script
+      data-cfasync="false"
+      src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"
+    ></script>
     <script>
       let slashTriggered = false;
 
@@ -1054,15 +1063,23 @@
           }, 500);
         }
 
-        setTimeout(() => {
-          const currentPage = document.getElementById(pageName);
-          currentPage.querySelectorAll(".hidden-character").forEach((char) => {
-            const reveal = char.querySelector(".character-reveal");
-            char.addEventListener("mouseenter", function () {
-              reveal.classList.add("discovered");
-            });
-          });
-        }, 100);
+        const currentPage = document.getElementById(pageName);
+        const characters = currentPage.querySelectorAll(".hidden-character");
+
+        characters.forEach((char) => {
+          char.style.animation = "none";
+          char.offsetHeight;
+          char.style.animation = null;
+
+          const reveal = char.querySelector(".character-reveal");
+          char.removeEventListener("mouseenter", handleCharacterHover);
+          char.addEventListener("mouseenter", handleCharacterHover);
+        });
+      }
+
+      function handleCharacterHover() {
+        const reveal = this.querySelector(".character-reveal");
+        reveal.classList.add("discovered");
       }
 
       function triggerSlashAnimation() {
@@ -1085,10 +1102,7 @@
 
       document.addEventListener("DOMContentLoaded", function () {
         document.querySelectorAll(".hidden-character").forEach((char) => {
-          const reveal = char.querySelector(".character-reveal");
-          char.addEventListener("mouseenter", function () {
-            reveal.classList.add("discovered");
-          });
+          char.addEventListener("mouseenter", handleCharacterHover);
         });
       });
 
@@ -1107,7 +1121,7 @@
             });
 
             if (response.ok) {
-              alert("Message sent successfully!");
+              alert("Message sent successfully");
               this.reset();
             }
           } catch (error) {
