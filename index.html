@@ -159,18 +159,18 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        background: var(--surface);
-        border: 2px solid var(--primary);
-        border-radius: 12px;
+        background: transparent;
+        border: none;
+        border-radius: 0;
         transition: all 0.3s;
-        box-shadow: 0 4px 15px rgba(227, 25, 55, 0.2);
+        box-shadow: none;
         position: relative;
-        overflow: hidden;
+        overflow: visible;
       }
 
       .character-reveal:hover {
         transform: scale(1.1);
-        box-shadow: 0 8px 25px rgba(227, 25, 55, 0.4);
+        box-shadow: none;
       }
 
       .character-img {
@@ -180,6 +180,7 @@
         border-radius: 50%;
         animation: characterFloat 2s ease-in-out infinite;
         filter: drop-shadow(0 0 10px rgba(227, 25, 55, 0.5));
+        border: none;
       }
 
       @keyframes characterFloat {
@@ -215,12 +216,8 @@
       }
 
       .character-reveal.discovered {
-        background: linear-gradient(
-          135deg,
-          var(--surface),
-          rgba(227, 25, 55, 0.1)
-        );
-        border-color: var(--accent);
+        background: transparent;
+        border-color: transparent;
       }
 
       .character-reveal.discovered .character-name {
@@ -246,26 +243,7 @@
       }
 
       .character-reveal::before {
-        content: "";
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 0;
-        height: 0;
-        border-radius: 50%;
-        background: radial-gradient(
-          circle,
-          rgba(227, 25, 55, 0.3),
-          transparent
-        );
-        transform: translate(-50%, -50%);
-        transition: all 0.5s;
-        pointer-events: none;
-      }
-
-      .character-reveal.discovered::before {
-        width: 150%;
-        height: 150%;
+        display: none;
       }
 
       .experience-panel {
@@ -292,28 +270,41 @@
       .slash-line {
         position: absolute;
         top: 50%;
-        left: -100%;
-        width: 150%;
-        height: 3px;
+        left: 0;
+        width: 100%;
+        height: 6px;
         background: linear-gradient(
           90deg,
           transparent,
+          var(--primary),
+          var(--primary),
           var(--primary),
           transparent
         );
         transform: translateY(-50%) rotate(-15deg);
         box-shadow:
-          0 0 20px var(--primary),
-          0 0 40px var(--primary);
+          0 0 30px var(--primary),
+          0 0 60px var(--primary),
+          0 0 90px rgba(227, 25, 55, 0.5);
+        opacity: 0;
       }
 
       .sukuna-slash-container.slashing .slash-line {
-        animation: slashMove 0.6s ease-out forwards;
+        animation: slashAppear 1.5s ease-out forwards;
       }
 
-      @keyframes slashMove {
-        to {
-          left: 100%;
+      @keyframes slashAppear {
+        0% {
+          opacity: 0;
+        }
+        10% {
+          opacity: 1;
+        }
+        80% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
         }
       }
 
@@ -326,23 +317,32 @@
 
       .impact-particle {
         position: absolute;
-        width: 4px;
-        height: 4px;
+        width: 6px;
+        height: 6px;
         background: var(--primary);
         border-radius: 50%;
         opacity: 0;
+        box-shadow: 0 0 10px var(--primary);
       }
 
       .sukuna-slash-container.slashing .impact-particle:nth-child(1) {
-        animation: particle1 0.8s ease-out 0.3s;
+        animation: particle1 0.6s ease-out 0.15s;
       }
 
       .sukuna-slash-container.slashing .impact-particle:nth-child(2) {
-        animation: particle2 0.8s ease-out 0.3s;
+        animation: particle2 0.6s ease-out 0.15s;
       }
 
       .sukuna-slash-container.slashing .impact-particle:nth-child(3) {
-        animation: particle3 0.8s ease-out 0.3s;
+        animation: particle3 0.6s ease-out 0.15s;
+      }
+
+      .sukuna-slash-container.slashing .impact-particle:nth-child(4) {
+        animation: particle4 0.6s ease-out 0.15s;
+      }
+
+      .sukuna-slash-container.slashing .impact-particle:nth-child(5) {
+        animation: particle5 0.6s ease-out 0.15s;
       }
 
       @keyframes particle1 {
@@ -352,7 +352,7 @@
         }
         100% {
           opacity: 0;
-          transform: translate(-50px, -50px) scale(0);
+          transform: translate(-60px, -60px) scale(0);
         }
       }
 
@@ -363,7 +363,7 @@
         }
         100% {
           opacity: 0;
-          transform: translate(50px, -30px) scale(0);
+          transform: translate(60px, -40px) scale(0);
         }
       }
 
@@ -374,7 +374,73 @@
         }
         100% {
           opacity: 0;
-          transform: translate(0, 60px) scale(0);
+          transform: translate(-40px, 70px) scale(0);
+        }
+      }
+
+      @keyframes particle4 {
+        0% {
+          opacity: 1;
+          transform: translate(0, 0) scale(1);
+        }
+        100% {
+          opacity: 0;
+          transform: translate(70px, 50px) scale(0);
+        }
+      }
+
+      @keyframes particle5 {
+        0% {
+          opacity: 1;
+          transform: translate(0, 0) scale(1);
+        }
+        100% {
+          opacity: 0;
+          transform: translate(0, -80px) scale(0);
+        }
+      }
+
+      .sukuna-laugh {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-family: "Unbounded", sans-serif;
+        font-size: 3rem;
+        font-weight: 900;
+        color: var(--primary);
+        opacity: 0;
+        z-index: 15;
+        text-shadow:
+          0 0 20px var(--primary),
+          0 0 40px var(--primary);
+        pointer-events: none;
+      }
+
+      .sukuna-slash-container.slashing .sukuna-laugh {
+        animation: laughAppear 2s ease-out 0.2s;
+      }
+
+      @keyframes laughAppear {
+        0% {
+          opacity: 0;
+          transform: translate(-50%, -50%) scale(0.5) rotate(-10deg);
+        }
+        15% {
+          opacity: 1;
+          transform: translate(-50%, -50%) scale(1.3) rotate(5deg);
+        }
+        30% {
+          opacity: 1;
+          transform: translate(-50%, -50%) scale(1.1) rotate(-2deg);
+        }
+        70% {
+          opacity: 1;
+          transform: translate(-50%, -50%) scale(1.1) rotate(0deg);
+        }
+        100% {
+          opacity: 0;
+          transform: translate(-50%, -50%) scale(0.8) rotate(0deg);
         }
       }
 
@@ -384,27 +450,27 @@
 
       .panel-top,
       .panel-bottom {
-        transition: all 0.8s ease-out;
+        transition: all 0.6s ease-out;
       }
 
       .experience-panel.slashed .panel-top {
-        animation: topSlide 1s ease-out forwards;
+        animation: topSlide 0.8s ease-out 0.3s forwards;
       }
 
       .experience-panel.slashed .panel-bottom {
-        animation: bottomSlide 1s ease-out forwards;
+        animation: bottomSlide 0.8s ease-out 0.3s forwards;
       }
 
       @keyframes topSlide {
         to {
-          transform: translateY(-150px) translateX(-30px) rotate(-8deg);
+          transform: translateY(-120px) translateX(-25px) rotate(-6deg);
           opacity: 0;
         }
       }
 
       @keyframes bottomSlide {
         to {
-          transform: translateY(150px) translateX(30px) rotate(8deg);
+          transform: translateY(120px) translateX(25px) rotate(6deg);
           opacity: 0;
         }
       }
@@ -420,15 +486,34 @@
         width: 60%;
       }
 
-      .zero-experience-message {
+      .special-grade-message {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
         text-align: center;
-        margin-top: 2rem;
         opacity: 0;
+        z-index: 5;
         transition: opacity 0.5s;
       }
 
-      .zero-experience-message.visible {
+      .special-grade-message.visible {
         opacity: 1;
+      }
+
+      .special-grade-message h3 {
+        font-size: 1.8rem;
+        font-family: "Unbounded", sans-serif;
+        background: linear-gradient(135deg, var(--primary), var(--accent));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 0.5rem;
+        font-weight: 900;
+      }
+
+      .special-grade-message p {
+        color: var(--text-dim);
+        font-size: 1.1rem;
       }
 
       @media (max-width: 768px) {
@@ -439,6 +524,15 @@
         .character-img {
           width: 45px;
           height: 45px;
+        }
+        .sukuna-laugh {
+          font-size: 2rem;
+        }
+        .special-grade-message h3 {
+          font-size: 1.3rem;
+        }
+        .special-grade-message p {
+          font-size: 0.9rem;
         }
       }
     </style>
@@ -496,6 +590,28 @@
         </div>
         <div class="skill">
           <span style="font-size: 3rem">🦀</span><br /><strong>Rust</strong>
+        </div>
+        <div class="skill">
+          <span style="font-size: 3rem">⚛️</span><br /><strong>React</strong>
+        </div>
+        <div class="skill">
+          <span style="font-size: 3rem">🗄️</span><br /><strong>MySQL</strong>
+        </div>
+        <div class="skill">
+          <span style="font-size: 3rem">🔧</span><br /><strong>Git</strong>
+        </div>
+        <div class="skill">
+          <span style="font-size: 3rem">🧠</span><br /><strong
+            >Algorithms</strong
+          >
+        </div>
+        <div class="skill">
+          <span style="font-size: 3rem">🎨</span><br /><strong>UI/UX</strong>
+        </div>
+        <div class="skill">
+          <span style="font-size: 3rem">📊</span><br /><strong
+            >Data Structures</strong
+          >
         </div>
       </div>
     </div>
@@ -598,7 +714,10 @@
       <div class="experience-panel" id="experience-panel">
         <div class="sukuna-slash-container" id="slash-container">
           <div class="slash-line"></div>
+          <div class="sukuna-laugh">HA HA</div>
           <div class="slash-impact">
+            <div class="impact-particle"></div>
+            <div class="impact-particle"></div>
             <div class="impact-particle"></div>
             <div class="impact-particle"></div>
             <div class="impact-particle"></div>
@@ -612,21 +731,12 @@
           <div class="placeholder-line"></div>
           <div class="placeholder-line short"></div>
         </div>
-      </div>
-      <div class="zero-experience-message" id="zero-message">
-        <h3
-          style="
-            font-size: 1.5rem;
-            font-family: &quot;Unbounded&quot;, sans-serif;
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 0.5rem;
-          "
-        >
-          「Domain Expansion: Zero Job Experience」
-        </h3>
-        <p style="color: var(--text-dim)">Cleaved by Sukuna's technique ⚡</p>
+        <div class="special-grade-message" id="special-message">
+          <h3>No job experience yet,</h3>
+          <p style="color: var(--accent); font-weight: 700; font-size: 1.3rem">
+            but I am special grade!
+          </p>
+        </div>
       </div>
 
       <h2 style="color: var(--accent); margin: 2rem 0 1rem 0">🚀 Projects</h2>
@@ -649,7 +759,7 @@
 
       <div
         class="project-card"
-        onclick="window.open('https://github.com/MajdHail/portfolio', '_blank')"
+        onclick="window.open('https://github.com/MajdHail/Majd', '_blank')"
       >
         <h3 style="color: var(--primary)">Portfolio Website ↗</h3>
         <p>
@@ -959,7 +1069,7 @@
         slashTriggered = true;
         const slashContainer = document.getElementById("slash-container");
         const experiencePanel = document.getElementById("experience-panel");
-        const zeroMessage = document.getElementById("zero-message");
+        const specialMessage = document.getElementById("special-message");
 
         setTimeout(() => {
           slashContainer.classList.add("slashing");
@@ -967,9 +1077,9 @@
           setTimeout(() => {
             experiencePanel.classList.add("slashed");
             setTimeout(() => {
-              zeroMessage.classList.add("visible");
-            }, 1000);
-          }, 500);
+              specialMessage.classList.add("visible");
+            }, 800);
+          }, 300);
         }, 500);
       }
 
@@ -997,7 +1107,7 @@
             });
 
             if (response.ok) {
-              alert("✨ Message sent successfully!");
+              alert("Message sent successfully!");
               this.reset();
             }
           } catch (error) {
