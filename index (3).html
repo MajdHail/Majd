@@ -1,0 +1,402 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Majd Yasin | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Unbounded:wght@300;400;600;700;900&display=swap" rel="stylesheet" />
+    <link href="./styles.css" rel="stylesheet" />
+  </head>
+  <body>
+
+    <div class="noise-overlay"></div>
+
+    <nav>
+      <div class="nav-brand">
+        <span class="brand-dot"></span>
+        <span>MY</span>
+      </div>
+      <div class="nav-links">
+        <button onclick="showPage('home')" class="active" id="nav-home">Home</button>
+        <button onclick="showPage('about')" id="nav-about">About</button>
+        <button onclick="showPage('history')" id="nav-history">Projects</button>
+        <button onclick="showPage('achievements')" id="nav-achievements">Achievements</button>
+        <button onclick="showPage('contact')" id="nav-contact">Contact</button>
+      </div>
+    </nav>
+
+    <!-- ═══════════════ HOME PAGE ═══════════════ -->
+    <div id="home" class="page active">
+      <div class="hidden-character top-left" style="animation-delay:0.5s">
+        <div class="character-reveal">
+          <img src="./Assets/gojo.png" alt="Gojo" class="character-img" />
+          <span class="character-name">Gojo</span>
+        </div>
+      </div>
+      <div class="hidden-character top-right" style="animation-delay:1s">
+        <div class="character-reveal">
+          <img src="./Assets/sukuna.png" alt="Sukuna" class="character-img" />
+          <span class="character-name">Sukuna</span>
+        </div>
+      </div>
+
+      <div class="hero-section">
+        <div class="hero-eyebrow">Computer Science Student · Developer · Competitive Programmer</div>
+        <h1 class="hero-name">Majd<br>Yasin</h1>
+        <p class="hero-desc">
+          Pursuing CS at German Jordanian University.<br>
+          Building with precision, competing with passion.
+        </p>
+        <div class="hero-cta">
+          <button class="btn-primary" onclick="showPage('history')">View Projects</button>
+          <button class="btn-ghost" onclick="showPage('contact')">Get In Touch</button>
+        </div>
+      </div>
+
+      <div class="section-label">Technical Skills</div>
+      <div class="skill-grid">
+        <div class="skill"><span class="skill-icon">🐍</span><strong>Python</strong></div>
+        <div class="skill"><span class="skill-icon">☕</span><strong>Java</strong></div>
+        <div class="skill"><span class="skill-icon">⚡</span><strong>C++</strong></div>
+        <div class="skill"><span class="skill-icon">🌐</span><strong>Web Dev</strong></div>
+        <div class="skill"><span class="skill-icon">👁️</span><strong>Computer Vision</strong></div>
+        <div class="skill"><span class="skill-icon">🦀</span><strong>Rust</strong></div>
+        <div class="skill"><span class="skill-icon">⚛️</span><strong>React</strong></div>
+        <div class="skill"><span class="skill-icon">🗄️</span><strong>MySQL</strong></div>
+        <div class="skill"><span class="skill-icon">🔧</span><strong>Git</strong></div>
+        <div class="skill"><span class="skill-icon">🧠</span><strong>Algorithms</strong></div>
+        <div class="skill"><span class="skill-icon">🎨</span><strong>UI/UX</strong></div>
+        <div class="skill"><span class="skill-icon">📊</span><strong>Data Structures</strong></div>
+      </div>
+    </div>
+
+    <!-- ═══════════════ ABOUT PAGE ═══════════════ -->
+    <div id="about" class="page">
+      <div class="hidden-character bottom-left" style="animation-delay:0.5s">
+        <div class="character-reveal">
+          <img src="./Assets/megumi.png" alt="Megumi" class="character-img" />
+          <span class="character-name">Megumi</span>
+        </div>
+      </div>
+      <div class="hidden-character top-right" style="animation-delay:1.2s">
+        <div class="character-reveal">
+          <img src="./Assets/nobara.png" alt="Nobara" class="character-img" />
+          <span class="character-name">Nobara</span>
+        </div>
+      </div>
+
+      <div class="page-header">
+        <div class="section-label">Who I Am</div>
+        <h1>About Me</h1>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-card">
+          <div class="about-card-number">01</div>
+          <h2>Background</h2>
+          <p>I'm a Computer Science student at the German Jordanian University in Amman, Jordan. Passionate about software development, competitive programming, and computer vision — constantly learning and refining my craft.</p>
+        </div>
+
+        <div class="about-card">
+          <div class="about-card-number">02</div>
+          <h2>Technical Stack</h2>
+          <ul class="about-list">
+            <li>Python, Java, C++, C, Rust</li>
+            <li>HTML, CSS, JavaScript, React, Node.js</li>
+            <li>Computer Vision — OpenCV, MediaPipe</li>
+            <li>Database Design — MySQL</li>
+            <li>Data Structures & Algorithms</li>
+            <li>Digital Systems & Logic Design</li>
+            <li>Object-Oriented Programming</li>
+          </ul>
+        </div>
+
+        <div class="about-card">
+          <div class="about-card-number">03</div>
+          <h2>Beyond Code</h2>
+          <p>When I'm not coding, you'll find me competing in programming competitions or volunteering at tech events across Amman.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══════════════ PROJECTS PAGE ═══════════════ -->
+    <div id="history" class="page">
+      <div class="hidden-character top-left" style="animation-delay:0.3s">
+        <div class="character-reveal">
+          <img src="./Assets/yuji.png" alt="Yuji" class="character-img" />
+          <span class="character-name">Yuji</span>
+        </div>
+      </div>
+      <div class="hidden-character bottom-right" style="animation-delay:0.8s">
+        <div class="character-reveal">
+          <img src="./Assets/hakari.png" alt="Hakari" class="character-img" />
+          <span class="character-name">Hakari</span>
+        </div>
+      </div>
+
+      <div class="page-header">
+        <div class="section-label">What I've Built</div>
+        <h1>Projects</h1>
+      </div>
+
+      <div class="section-label" style="margin-top:3rem">Work Experience</div>
+      <div class="experience-panel" id="experience-panel">
+        <div class="sukuna-slash-container" id="slash-container">
+          <div class="slash-line"></div>
+          <div class="sukuna-laugh">HA HA</div>
+          <div class="slash-impact">
+            <div class="impact-particle"></div>
+            <div class="impact-particle"></div>
+            <div class="impact-particle"></div>
+            <div class="impact-particle"></div>
+            <div class="impact-particle"></div>
+          </div>
+        </div>
+        <div class="panel-top">
+          <div class="placeholder-line"></div>
+          <div class="placeholder-line short"></div>
+        </div>
+        <div class="panel-bottom">
+          <div class="placeholder-line"></div>
+          <div class="placeholder-line short"></div>
+        </div>
+        <div class="special-grade-message" id="special-message">
+          <h3>No experience yet —</h3>
+          <p>but I am <span class="accent-text">Special Grade.</span></p>
+        </div>
+      </div>
+
+      <div class="section-label" style="margin-top:3rem">Selected Projects</div>
+      <div class="projects-grid">
+        <div class="project-card" onclick="window.open('https://github.com/MajdHail/FaceRecognition','_blank')">
+          <div class="project-number">01</div>
+          <div class="project-body">
+            <h3>Face Recognition System <span class="arrow">↗</span></h3>
+            <p>Real-time facial detection and identification system built with computer vision techniques using OpenCV and MediaPipe.</p>
+            <div class="project-tags">
+              <span class="tag">Python</span>
+              <span class="tag">OpenCV</span>
+              <span class="tag">MediaPipe</span>
+              <span class="tag">Computer Vision</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" onclick="window.open('https://github.com/MajdHail/portfolio','_blank')">
+          <div class="project-number">02</div>
+          <div class="project-body">
+            <h3>Portfolio Website <span class="arrow">↗</span></h3>
+            <p>Professional portfolio website showcasing work, achievements, and contact information with custom animations.</p>
+            <div class="project-tags">
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">UI/UX</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card highlight-card">
+          <div class="project-number">🏆</div>
+          <div class="project-body">
+            <h3>IEEExtreme 19.0</h3>
+            <p>24-hour global programming competition. Achieved <strong>1st place in Jordan</strong> and <strong>180th worldwide</strong> out of 8,000+ participants.</p>
+            <div class="project-tags">
+              <span class="tag">Algorithms</span>
+              <span class="tag">C++</span>
+              <span class="tag">Python</span>
+              <span class="tag">Problem Solving</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-label" style="margin-top:3rem">Education</div>
+      <div class="edu-card">
+        <div class="edu-left">
+          <div class="edu-year">2024 – Present</div>
+          <div class="edu-location">Amman, Jordan</div>
+        </div>
+        <div class="edu-right">
+          <h3>B.Sc. Computer Science</h3>
+          <p class="edu-uni">German Jordanian University (GJU)</p>
+          <p>Actively developing skills in software development, algorithms, digital systems, and computer vision through academic projects and competitive programming.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══════════════ ACHIEVEMENTS PAGE ═══════════════ -->
+    <div id="achievements" class="page">
+      <div class="hidden-character top-right" style="animation-delay:0.7s">
+        <div class="character-reveal">
+          <img src="./Assets/gojo.png" alt="Gojo" class="character-img" />
+          <span class="character-name">Gojo</span>
+        </div>
+      </div>
+
+      <div class="page-header">
+        <div class="section-label">Milestones & Recognition</div>
+        <h1>Achievements</h1>
+      </div>
+
+      <!-- IEEExtreme -->
+      <div class="achievement-block">
+        <div class="achievement-meta">
+          <div class="achievement-badge">🏆</div>
+          <div class="achievement-label">Competition · 2024</div>
+        </div>
+        <div class="achievement-content">
+          <h2>IEEExtreme 19.0</h2>
+          <p class="achievement-subtitle">1st in Jordan · 180th Worldwide / 8,000+ Participants</p>
+          <p>Competed in IEEE's prestigious 24-hour global programming marathon. Our team solved algorithmic challenges requiring deep knowledge of data structures, graph theory, and optimization under intense time pressure — placing first nationally and 180th globally.</p>
+
+          <div class="achievement-gallery single">
+            <div class="gallery-item placeholder-achievement">
+              <div class="placeholder-icon">🏅</div>
+              <p>Add your IEEExtreme participation certificate or team photo here</p>
+              <span class="placeholder-hint">Replace with: &lt;img src="./Assets/ieeeextreme.jpg" /&gt;</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mediverse Debate -->
+      <div class="achievement-block">
+        <div class="achievement-meta">
+          <div class="achievement-badge">🎤</div>
+          <div class="achievement-label">Competition · 2025</div>
+        </div>
+        <div class="achievement-content">
+          <h2>Mediverse Debate Competition</h2>
+          <p class="achievement-subtitle">Winner</p>
+          <p>Won the Mediverse 2025 Debate Competition, demonstrating strong argumentation, critical thinking, and the ability to articulate complex ideas under pressure.</p>
+
+          <div class="achievement-gallery single">
+            <div class="gallery-item placeholder-achievement">
+              <div class="placeholder-icon">🥇</div>
+              <p>Add your debate competition award photo or certificate here</p>
+              <span class="placeholder-hint">Replace with: &lt;img src="./Assets/mediverse.jpg" /&gt;</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DevFest -->
+      <div class="achievement-block">
+        <div class="achievement-meta">
+          <div class="achievement-badge">🤝</div>
+          <div class="achievement-label">Volunteering · 2025</div>
+        </div>
+        <div class="achievement-content">
+          <h2>DevFest Amman 2025</h2>
+          <p class="achievement-subtitle">Registration Assistant — Volunteer</p>
+          <p>Served as a volunteer at one of Amman's premier developer conferences, managing registration logistics and supporting attendees. Gained firsthand exposure to the local tech ecosystem and industry professionals.</p>
+
+          <div class="achievement-gallery single">
+            <div class="gallery-item placeholder-achievement">
+              <div class="placeholder-icon">📸</div>
+              <p>Add your DevFest event photo or volunteer certificate here</p>
+              <span class="placeholder-hint">Replace with: &lt;img src="./Assets/devfest.jpg" /&gt;</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Portfolio Project -->
+      <div class="achievement-block">
+        <div class="achievement-meta">
+          <div class="achievement-badge">💻</div>
+          <div class="achievement-label">Project · 2025</div>
+        </div>
+        <div class="achievement-content">
+          <h2>Personal Portfolio Website</h2>
+          <p class="achievement-subtitle">Designed & Developed from Scratch</p>
+          <p>Designed and built a fully custom portfolio website using vanilla HTML, CSS, and JavaScript. Features page-based navigation, animated hidden characters, a Sukuna slash reveal animation for the experience section, and a contact form integrated with Formspree — all without any frontend framework.</p>
+
+          <div class="achievement-gallery single">
+            <div class="gallery-item placeholder-achievement">
+              <div class="placeholder-icon">🌐</div>
+              <p>Add a screenshot of your portfolio website here</p>
+              <span class="placeholder-hint">Replace with: &lt;img src="./Assets/portfolio-screenshot.jpg" /&gt;</span>
+            </div>
+          </div>
+
+          <div style="margin-top:1.5rem">
+            <a href="https://github.com/MajdHail/portfolio" target="_blank" class="btn-ghost small">View on GitHub ↗</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══════════════ CONTACT PAGE ═══════════════ -->
+    <div id="contact" class="page">
+      <div class="page-header">
+        <div class="section-label">Let's Talk</div>
+        <h1>Contact</h1>
+      </div>
+
+      <div class="contact-layout">
+        <div class="contact-info">
+          <p class="contact-intro">Open to collaborations, opportunities, or conversations about development and competitive programming.</p>
+
+          <div class="contact-links">
+            <a href="/cdn-cgi/l/email-protection#e28f838886cc8c8d97909b83918b8ca2858f838b8ecc818d8f" class="contact-link">
+              <span class="contact-link-icon">📧</span>
+              <div>
+                <div class="contact-link-label">Email</div>
+                <span class="__cf_email__" data-cfemail="b9d4d8d3dd97d7d6cccbc0d8cad0d7f9ded4d8d0d597dad6d4">[email&#160;protected]</span>
+              </div>
+            </a>
+            <a href="https://github.com/MajdHail" target="_blank" class="contact-link">
+              <span class="contact-link-icon">💻</span>
+              <div>
+                <div class="contact-link-label">GitHub</div>
+                github.com/MajdHail
+              </div>
+            </a>
+            <a href="https://linkedin.com/in/majdyasin" target="_blank" class="contact-link">
+              <span class="contact-link-icon">💼</span>
+              <div>
+                <div class="contact-link-label">LinkedIn</div>
+                linkedin.com/in/majdyasin
+              </div>
+            </a>
+            <a href="tel:+962796089230" class="contact-link">
+              <span class="contact-link-icon">📱</span>
+              <div>
+                <div class="contact-link-label">Phone</div>
+                +962 79 608 9230
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="contact-form-wrap">
+          <form id="contactForm">
+            <div class="form-group">
+              <label>Name</label>
+              <input type="text" name="name" required placeholder="Your name" />
+            </div>
+            <div class="form-group">
+              <label>Email</label>
+              <input type="email" name="email" required placeholder="your@email.com" />
+            </div>
+            <div class="form-group">
+              <label>Message</label>
+              <textarea name="message" required rows="5" placeholder="What's on your mind?"></textarea>
+            </div>
+            <button type="submit" class="btn-primary full-width">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <p>© 2025 Majd Yasin</p>
+      <p class="footer-hint">Hover the corners to discover hidden characters</p>
+    </footer>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script src="./scripts.js"></script>
+  </body>
+</html>
