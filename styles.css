@@ -294,7 +294,8 @@ h3 {
   box-shadow: 0 8px 24px rgba(227, 25, 55, 0.15);
 }
 
-.skill-icon { font-size: 2rem; display: block; margin-bottom: 0.5rem; }
+.skill-icon { width: 2.5rem; height: 2.5rem; display: block; margin: 0 auto 0.6rem; object-fit: contain; }
+.skill-icon-light { filter: brightness(0) invert(1); opacity: 0.85; }
 .skill strong { font-family: "Unbounded", sans-serif; font-size: 0.65rem; font-weight: 600; letter-spacing: 0.05em; color: var(--text-dim); }
 
 /* ── About Grid ── */
