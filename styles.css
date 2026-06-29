@@ -700,7 +700,7 @@ h3 {
   cursor: pointer;
   z-index: 500;
   opacity: 0;
-  animation: fadeInChar 0.5s forwards;
+  animation: fadeInChar 0.4s ease forwards;
 }
 
 @keyframes fadeInChar { to { opacity: 1; } }
