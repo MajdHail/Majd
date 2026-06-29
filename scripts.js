@@ -4,11 +4,15 @@ function showPage(pageName) {
   document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
   document.getElementById('nav-' + pageName).classList.add('active');
 
-  // Re-trigger character hover listeners for the newly active page
-  const currentPage = document.getElementById(pageName);
-  currentPage.querySelectorAll('.hidden-character').forEach(char => {
-    char.removeEventListener('mouseenter', handleCharacterHover);
-    char.addEventListener('mouseenter', handleCharacterHover);
+  document.querySelectorAll('.hidden-character[data-page]').forEach(char => {
+    const visible = char.dataset.page === pageName;
+    char.style.display = visible ? 'block' : 'none';
+    if (visible) {
+      // Restart fade-in animation
+      char.style.animation = 'none';
+      void char.offsetHeight;
+      char.style.animation = '';
+    }
   });
 
   window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -19,8 +23,10 @@ function handleCharacterHover() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('.hidden-character').forEach(char => {
+  document.querySelectorAll('.hidden-character[data-page]').forEach(char => {
     char.addEventListener('mouseenter', handleCharacterHover);
+    // Show only the characters for the initial active page (home)
+    if (char.dataset.page !== 'home') char.style.display = 'none';
   });
 });
 
