@@ -639,7 +639,8 @@ h3 {
   width: 100%;
 }
 
-.gallery-item img {
+.gallery-item img,
+.gallery-item video {
   width: 100%;
   height: auto;
   display: block;
