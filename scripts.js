@@ -1,3 +1,4 @@
+// Reveals hidden characters on hover and sends the contact form without leaving the page.
 document.querySelectorAll('.hidden-character').forEach(char => {
   char.addEventListener('mouseenter', function () {
     this.querySelector('.character-reveal').classList.add('discovered');
