@@ -745,7 +745,7 @@ h3 {
 
 .form-group textarea { resize: vertical; }
 
-/* ── Hidden Characters — fixed to viewport corners ── */
+/* Hidden characters pinned to the viewport corners */
 .hidden-character.corner {
   position: fixed;
   width: 70px;
